@@ -4,7 +4,7 @@ API for [carbon](https://carbon.now.sh/).
 
 ## Getting started
 
-Send POST `https://carbonara-42.herokuapp.com/api/cook` to take an image of code snippet.
+Send POST `https://carbonara.solopov.dev/api/cook` to take an image of code snippet.
 
 ## How it works
 
@@ -34,6 +34,7 @@ Send POST `https://carbonara-42.herokuapp.com/api/cook` to take an image of code
 | `paddingHorizontal`    | `"56px"`                   | string                    | horizontal padding                                                                                                                                                      |
 | `paddingVertical`      | `"56px"`                   | string                    | vertical padding                                                                                                                                                        |
 | `prettify`             | `false`                    | boolean                   | prettify code with prettier. It works with javascript snippets only, like in carbon.                                                                                    |
+| `selectedLines`        | `""`                       | string                    | selected lines to highlight. e.g. `3`, `3,4`, `3,6,8`                                                                                                                   |
 | `theme`                | `"seti"`                   | string                    | code theme                                                                                                                                                              |
 | `watermark`            | `false`                    | boolean                   | turn on/off watermark                                                                                                                                                   |
 | `width`                | `536`                      | number                    | specify the width of the screenshot                                                                                                                                     |
@@ -50,7 +51,7 @@ Send POST `https://carbonara-42.herokuapp.com/api/cook` to take an image of code
 Creating image and saving to `code.png` in terminal.
 
 ```bash
-curl -L https://carbonara-42.herokuapp.com/api/cook \
+curl -L https://carbonara.solopov.dev/api/cook \
 -X POST \
 -H 'Content-Type: application/json' \
 -d '{
@@ -63,7 +64,7 @@ curl -L https://carbonara-42.herokuapp.com/api/cook \
 or using multipart
 
 ```bash
-curl -L https://carbonara-42.herokuapp.com/api/cook \
+curl -L https://carbonara.solopov.dev/api/cook \
 -X POST \
 -H 'Content-Type: multipart/form-data' \
 -F code="export default const sum = (a, b) => a + b" \
